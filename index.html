@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile Directory</title>
+    <!-- Configure Tailwind for dark mode -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Custom styles for dark mode -->
+    <style>
+      .dark .dark\:text-white {
+        color: white;
+      }
+      .dark .dark\:bg-gray-800 {
+        background-color: #1f2937;
+      }
+      .dark .dark\:bg-gray-900 {
+        background-color: #111827;
+      }
+      .dark .dark\:text-gray-300 {
+        color: #d1d5db;
+      }
+      .dark .dark\:text-gray-400 {
+        color: #9ca3af;
+      }
+      .dark .dark\:border-gray-700 {
+        border-color: #374151;
+      }
+      .dark .dark\:bg-blue-900 {
+        background-color: #1e3a8a;
+      }
+      .dark .dark\:text-blue-200 {
+        color: #bfdbfe;
+      }
+      .dark .dark\:hover\:bg-gray-700:hover {
+        background-color: #374151;
+      }
+      .dark .dark\:hover\:bg-blue-800:hover {
+        background-color: #1e40af;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 min-h-screen">
+    <!-- Navigation Bar -->
+    <nav
+      class="bg-white dark:bg-gray-800 shadow-md transition-colors duration-200"
+    >
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex justify-between items-center">
+          <!-- Logo/Brand -->
+          <div class="flex items-center">
+            <i
+              class="fas fa-users text-blue-600 dark:text-blue-400 text-2xl mr-2"
+            ></i>
+            <span class="text-xl font-bold text-gray-800 dark:text-white"
+              >UserDirectory</span
+            >
+          </div>
+
+          <!-- Navigation Links -->
+          <div class="hidden md:flex space-x-6">
+            <a
+              href="#"
+              class="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >Home</a
+            >
+            <a
+              href="#"
+              class="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >Users</a
+            >
+            <a
+              href="#"
+              class="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >About</a
+            >
+            <a
+              href="#"
+              class="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >Contact</a
+            >
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button
+              id="mobileMenuButton"
+              class="text-gray-800 dark:text-white focus:outline-none"
+            >
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu (hidden by default) -->
+        <div id="mobileMenu" class="hidden md:hidden mt-2 pb-2">
+          <a
+            href="#"
+            class="block py-2 text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition"
+            >Home</a
+          >
+          <a
+            href="#"
+            class="block py-2 text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition"
+            >Users</a
+          >
+          <a
+            href="#"
+            class="block py-2 text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition"
+            >About</a
+          >
+          <a
+            href="#"
+            class="block py-2 text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+      <!-- Header and search container with background -->
+      <div
+        class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8 transition-colors duration-200"
+      >
+        <h1
+          class="text-3xl font-bold text-center mb-6 text-gray-800 dark:text-white"
+        >
+          User Profile Directory
+        </h1>
+
+        <!-- Search and Filter -->
+        <div class="flex flex-col md:flex-row gap-4">
+          <!-- Search input -->
+          <div class="flex-1">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search by name..."
+              class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <!-- Filter dropdowns -->
+          <div class="flex gap-2">
+            <select
+              id="cityFilter"
+              class="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option value="All Cities">All Cities</option>
+            </select>
+
+            <select
+              id="companyFilter"
+              class="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option value="All Companies">All Companies</option>
+            </select>
+          </div>
+
+          <!-- Dark mode button -->
+          <button
+            id="darkModeToggle"
+            class="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+          >
+            <i class="fas fa-moon dark:hidden"></i>
+            <i class="fas fa-sun hidden dark:block"></i>
+            <span class="dark-mode-text">Dark Mode</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Loading state -->
+      <div id="loading" class="text-center py-8">
+        <div
+          class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"
+        ></div>
+        <p class="mt-2 text-gray-800 dark:text-white">Loading users...</p>
+      </div>
+
+      <!-- Error state -->
+      <div
+        id="error"
+        class="hidden text-center py-8 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 rounded-lg"
+      >
+        <i class="fas fa-exclamation-triangle text-2xl mb-2"></i>
+        <p>Failed to load users. Please try again later</p>
+        <button
+          id="retryButton"
+          class="mt-4 px-4 py-2 bg-red-600 dark:bg-red-700 text-white rounded-lg hover:bg-red-700 dark:hover:bg-red-800 transition"
+        >
+          Retry
+        </button>
+      </div>
+
+      <!-- User cards grid -->
+      <div
+        id="userGrid"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      ></div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
