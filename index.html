@@ -4,54 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Profile Directory</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Configure Tailwind for dark mode -->
     <script>
       tailwind.config = {
         darkMode: "class",
       };
     </script>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <!-- Custom styles for dark mode -->
-    <style>
-      .dark .dark\:text-white {
-        color: white;
-      }
-      .dark .dark\:bg-gray-800 {
-        background-color: #1f2937;
-      }
-      .dark .dark\:bg-gray-900 {
-        background-color: #111827;
-      }
-      .dark .dark\:text-gray-300 {
-        color: #d1d5db;
-      }
-      .dark .dark\:text-gray-400 {
-        color: #9ca3af;
-      }
-      .dark .dark\:border-gray-700 {
-        border-color: #374151;
-      }
-      .dark .dark\:bg-blue-900 {
-        background-color: #1e3a8a;
-      }
-      .dark .dark\:text-blue-200 {
-        color: #bfdbfe;
-      }
-      .dark .dark\:hover\:bg-gray-700:hover {
-        background-color: #374151;
-      }
-      .dark .dark\:hover\:bg-blue-800:hover {
-        background-color: #1e40af;
-      }
-    </style>
   </head>
-  <body class="bg-gray-100 min-h-screen">
+  <body class="bg-gray-100 dark:bg-gray-900 min-h-screen">
     <!-- Navigation Bar -->
     <nav
       class="bg-white dark:bg-gray-800 shadow-md transition-colors duration-200"
@@ -61,7 +29,7 @@
           <!-- Logo/Brand -->
           <div class="flex items-center">
             <i
-              class="fas fa-users text-blue-600 dark:text-blue-400 text-2xl mr-2"
+              class="fas fa-users text-purple-600 dark:text-purple-400 text-2xl mr-2"
             ></i>
             <span class="text-xl font-bold text-gray-800 dark:text-white"
               >UserDirectory</span
@@ -72,22 +40,22 @@
           <div class="hidden md:flex space-x-6">
             <a
               href="#"
-              class="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition"
+              class="text-gray-800 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 transition"
               >Home</a
             >
             <a
               href="#"
-              class="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition"
+              class="text-gray-800 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 transition"
               >Users</a
             >
             <a
               href="#"
-              class="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition"
+              class="text-gray-800 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 transition"
               >About</a
             >
             <a
               href="#"
-              class="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition"
+              class="text-gray-800 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 transition"
               >Contact</a
             >
           </div>
@@ -107,22 +75,22 @@
         <div id="mobileMenu" class="hidden md:hidden mt-2 pb-2">
           <a
             href="#"
-            class="block py-2 text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition"
+            class="block py-2 text-gray-800 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 transition"
             >Home</a
           >
           <a
             href="#"
-            class="block py-2 text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition"
+            class="block py-2 text-gray-800 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 transition"
             >Users</a
           >
           <a
             href="#"
-            class="block py-2 text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition"
+            class="block py-2 text-gray-800 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 transition"
             >About</a
           >
           <a
             href="#"
-            class="block py-2 text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition"
+            class="block py-2 text-gray-800 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 transition"
             >Contact</a
           >
         </div>
@@ -132,23 +100,23 @@
     <div class="container mx-auto px-4 py-8">
       <!-- Header and search container with background -->
       <div
-        class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8 transition-colors duration-200"
+        class="bg-purple-100 dark:bg-purple-100 rounded-lg shadow-md p-6 mb-8 transition-colors duration-200 border-2 border-purple-700 dark:border-purple-700"
       >
         <h1
-          class="text-3xl font-bold text-center mb-6 text-gray-800 dark:text-white"
+          class="text-3xl font-bold text-center mb-6 text-purple-800 dark:text-purple"
         >
           User Profile Directory
         </h1>
 
         <!-- Search and Filter -->
-        <div class="flex flex-col md:flex-row gap-4">
+        <div class="flex flex-col md:flex-row gap-4 items-center">
           <!-- Search input -->
           <div class="flex-1">
             <input
               type="text"
               id="searchInput"
-              placeholder="Search by name..."
-              class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Search by name or username..."
+              class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-100 bg-white dark:bg-gray-100 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
           </div>
 
@@ -156,14 +124,14 @@
           <div class="flex gap-2">
             <select
               id="cityFilter"
-              class="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              class="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-100 bg-white dark:bg-white text-gray-800 dark:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
             >
               <option value="All Cities">All Cities</option>
             </select>
 
             <select
               id="companyFilter"
-              class="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              class="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-100 bg-white dark:bg-white text-gray-800 dark:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
             >
               <option value="All Companies">All Companies</option>
             </select>
@@ -172,7 +140,7 @@
           <!-- Dark mode button -->
           <button
             id="darkModeToggle"
-            class="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+            class="flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-800 hover:bg-purple-600 text-white dark:bg-purple-800 dark:hover:bg-purple-600 transition"
           >
             <i class="fas fa-moon dark:hidden"></i>
             <i class="fas fa-sun hidden dark:block"></i>
@@ -184,7 +152,7 @@
       <!-- Loading state -->
       <div id="loading" class="text-center py-8">
         <div
-          class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"
+          class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-purple-500"
         ></div>
         <p class="mt-2 text-gray-800 dark:text-white">Loading users...</p>
       </div>
